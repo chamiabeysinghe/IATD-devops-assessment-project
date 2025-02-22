@@ -154,3 +154,4 @@ function addAirline(airline, airlines) {
     return airlines;
     console.log("bad code");
 }
+// Triggering GitHub Actions for task 2
