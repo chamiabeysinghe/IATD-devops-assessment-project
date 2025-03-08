@@ -122,3 +122,13 @@ test("generateFlightId: should return an ID with uppercase first two characters"
   expect(generateFlightId("jetstar").substring(0, 2)).toBe("JE"); 
   expect(generateFlightId("virgin").substring(0, 2)).toBe("VI"); 
 });
+
+// Test for empty string => Return as undefined
+test("generateFlightId: should return undefined for empty input ", () => {
+  expect(generateFlightId("")).toBe(undefined); 
+});
+
+// Test for whitespace string  => Return as undefined
+test("generateFlightId: should return undefined for whitespace ", () => {
+  expect(generateFlightId("   \n")).toBe(undefined); 
+});
