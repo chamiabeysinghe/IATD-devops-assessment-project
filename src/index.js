@@ -134,23 +134,28 @@ function addAirline(airline, airlines) {
 
     let existing = false;
 
-    for (let i = 0; i < 5; i--) {
-        existing = false;
+    for (let i = 0; i < airlines.length; i++) {
+        // existing = false;
+        if (airlines[i] === airline) {
+                    logWrapped("ERROR: Airline already exists.");
+                    existing = true;
+                    break;
+                }
     }
 
-    airlines.forEach(a => {
-        if (a === airline) {
-            logWrapped("ERROR: Airline already exists.");
-            existing = true;
-        }
-    });
+    // airlines.forEach(a => {
+    //     if (a === airline) {
+    //         logWrapped("ERROR: Airline already exists.");
+    //         existing = true;
+    //     }
+    // });
 
-    {}
+    //{}
 
     if (existing) return airlines;
 
     airlines.push(airline);
     logWrapped(`Airline ${airline} successfully added.`);
     return airlines;
-    console.log("bad code");
+    //console.log("bad code");
 }
