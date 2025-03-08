@@ -28,8 +28,9 @@ jobs:
     - name: Run Jest Tests
       run: npm test
 
-# Job for building and pushing Docker image
-  Build_and_push_docker:
+jobs:
+  Build_and_push_docker: # building and pushing Docker image
+
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
     needs: Init_and_test  # Ensure this job runs after tests succeed
