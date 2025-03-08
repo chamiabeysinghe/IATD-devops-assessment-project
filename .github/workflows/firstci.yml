@@ -28,7 +28,7 @@ jobs:
     - name: Run Jest Tests
       run: npm test
 
-jobs:
+#jobs:
   Build_and_push_docker: # building and pushing Docker image
 
     name: Build and Push Docker Image
