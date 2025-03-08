@@ -106,3 +106,12 @@ test("isValidDateString: invalid string", () => {
   test("generateFlightId: whitespace string", () => {
     expect(generateFlightId("   \n")).toBe(undefined);
   });
+
+  /***************** Tests for generateFlightId:****************************/
+
+// Test for the ID => first two characters of the airline name
+test("generateFlightId: should return an ID with first two letters of airline name", () => {
+  expect(generateFlightId("Qantas").substring(0, 2)).toBe("QA");
+  expect(generateFlightId("Jetstar").substring(0, 2)).toBe("JE");
+  expect(generateFlightId("Virgin").substring(0, 2)).toBe("VI");
+});
