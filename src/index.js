@@ -38,7 +38,7 @@ do {
                 case 0: {
                     let flightId = "";
                     let flightIndex = -1;
-                    flightId = flightId;
+                    //flightId = flightId; This is unnessasary since it is assigning a variable to itself.
                     do {
                         flightId = readlineSync.question(wrapString("Enter the id of the flight to change the date for: "));
                         for (let i = 0; i < flights.length; i++) {
@@ -49,7 +49,7 @@ do {
                         }
                         if (flightIndex < 0) {
                             logWrapped(`ERROR: Flight ID ${flightId} not found. Please enter the ID of a flight already tracked by this system.`);
-                        } else if (flightIndex < 0);
+                        }// else if (flightIndex < 0); This is unnessary else-if condition
                     } while (flightIndex < 0);
 
                     logWrapped(`The current departure date for ${flights[flightIndex].id} is ${flights[flightIndex].date}`);
