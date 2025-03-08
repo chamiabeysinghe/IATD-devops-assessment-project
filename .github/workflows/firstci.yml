@@ -45,17 +45,20 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build Docker image
+    # - name: Build Docker image
+    #   run: |
+    #     docker build -f Dockerfiles/test.Dockerfile -t chamika992/abeysinghe-chamika-intro-to-devops-a2:test-latest .
+
+    # - name: Push Docker image
+    #   run: |
+    #     docker push chamika992/abeysinghe-chamika-intro-to-devops-a2:test-latest
+    
+    - name: Build and Push Test Docker Image
       run: |
         docker build -f Dockerfiles/test.Dockerfile -t chamika992/abeysinghe-chamika-intro-to-devops-a2:test-latest .
-
-    - name: Push Docker image
-      run: |
         docker push chamika992/abeysinghe-chamika-intro-to-devops-a2:test-latest
 
-    - name: Build Test Docker Image
+    - name: Build and Push User Docker Image
       run: |
-        docker build -f Dockerfiles/test.Dockerfile -t username/lastname-firstname-intro-to-devops-a2:test-latest .
-        docker push username/lastname-firstname-intro-to-devops-a2:test-latest
-
-    
+        docker build -f Dockerfiles/user.Dockerfile -t chamika992/abeysinghe-chamika-intro-to-devops-a2:user-latest .
+        docker push chamika992/abeysinghe-chamika-intro-to-devops-a2:user-latest
