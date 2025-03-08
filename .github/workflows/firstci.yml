@@ -52,3 +52,10 @@ jobs:
     - name: Push Docker image
       run: |
         docker push chamika992/abeysinghe-chamika-intro-to-devops-a2:test-latest
+
+    - name: Build Test Docker Image
+      run: |
+        docker build -f Dockerfiles/test.Dockerfile -t username/lastname-firstname-intro-to-devops-a2:test-latest .
+        docker push username/lastname-firstname-intro-to-devops-a2:test-latest
+
+    
