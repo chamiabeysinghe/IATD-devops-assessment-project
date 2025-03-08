@@ -9,7 +9,7 @@ RUN npm install
 
 #COPY ./ ./
 #copy only nesassary files
-COPY . ./
-COPY ./Dockerfiles/test.Dockerfile ./
+# Copy the rest of the files to the container
+COPY . .
 
 CMD [ "npm", "test" ]
