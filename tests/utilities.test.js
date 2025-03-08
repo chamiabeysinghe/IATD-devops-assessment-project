@@ -115,3 +115,10 @@ test("generateFlightId: should return an ID with first two letters of airline na
   expect(generateFlightId("Jetstar").substring(0, 2)).toBe("JE");
   expect(generateFlightId("Virgin").substring(0, 2)).toBe("VI");
 });
+
+// Test for first two characters => Upper case to lowercase inputs
+test("generateFlightId: should return an ID with uppercase first two characters", () => {
+  expect(generateFlightId("qantas").substring(0, 2)).toBe("QA"); 
+  expect(generateFlightId("jetstar").substring(0, 2)).toBe("JE"); 
+  expect(generateFlightId("virgin").substring(0, 2)).toBe("VI"); 
+});
